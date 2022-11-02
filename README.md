@@ -23,4 +23,6 @@ Hadoop Workspace with RHEL 7
         $sudo subscription-manager repos --enable=rhel-7-server-optional-rpms
         $sudo yum install -y libtirpc-devel
         ```
+    - Hive Metastore deployment/start error
+      - Get mysql/postgresql (mysql-connector-java.jar) copy to /var/lib/ambari-agent/tmp
         
