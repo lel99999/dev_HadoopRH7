@@ -30,3 +30,8 @@ Hadoop Workspace with RHEL 7
     - Hive Metastore deployment/start error
       - Get mysql/postgresql (mysql-connector-java.jar) copy to /var/lib/ambari-agent/tmp
         
+#### Ambari Synchronizing LDAP Users & Groups
+- [https://docs.cloudera.com/HDPDocuments/HDP3/HDP-3.0.1/ambari-authentication-ldap-ad/content/authe_ldapad_synchronizing_ldap_users_and_groups.html](https://docs.cloudera.com/HDPDocuments/HDP3/HDP-3.0.1/ambari-authentication-ldap-ad/content/authe_ldapad_synchronizing_ldap_users_and_groups.html) <br/>
+  ```
+  $ambari-server sync-ldap --users users.txt --groups groups.txt
+  ```
