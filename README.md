@@ -45,3 +45,20 @@ Hadoop Workspace with RHEL 7
   ```
   $ambari-server sync-ldap --users users.txt --groups groups.txt
   ```
+
+#### PySpark Notes
+- Install the following: <br/>
+  ```
+  ## Install py4j for Python-Java integration 
+  $pip install py4j
+  ```
+  
+- Add to .bash_profile or .bashrc <br/>
+  ```
+  export SPARK_HOME='/{YOUR_SPARK_DIRECTORY}/spark-2.3.1-bin-hadoop2.7'
+  export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
+  export PYSPARK_DRIVER_PYTHON="jupyter"
+  export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+  export PYSPARK_PYTHON=python3
+  export PATH=$SPARK_HOME:$PATH:~/.local/bin:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
+  ```
