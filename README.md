@@ -48,10 +48,38 @@ Hadoop Workspace with RHEL 7
 
 #### PySpark Notes
 - Install the following: <br/>
-  ```
-  ## Install py4j for Python-Java integration 
-  $pip install py4j
-  ```
+
+  - Install Java
+    ```
+    $ sudo yum install java-1.8.0-openjdk
+    $ java -version
+
+    openjdk version "1.8.0_322"
+    OpenJDK Runtime Environment (build 1.8.0_322-b06)
+    OpenJDK 64-Bit Server VM (build 25.322-b06, mixed mode)
+    
+    ## Set Java Paths
+    export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+    export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
+    
+    $ sudo update-alternatives --config 'java'
+    ```
+  
+  - Install Scala 2.12.4
+    ```
+    $yum install wget -y
+    $wget https://downloads.lightbend.com/scala/2.12.4/scala-2.12.4.tgz
+    $tar xvf scala-2.12.4.tgz
+    $sudo mv scala-2.12.4 /usr/lib
+    $sudo ln -s /usr/lib/scala-2.12.4 /usr/lib/scala
+    $export PATH=$PATH:/usr/lib/scala/bin
+    $scala -version
+    ```
+  
+  - Install py4j for Python-Java integration 
+    ```
+    $pip install py4j
+    ```
   
 - Add to .bash_profile or .bashrc <br/>
   ```
